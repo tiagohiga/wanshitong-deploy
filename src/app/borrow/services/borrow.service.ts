@@ -18,7 +18,7 @@ export class BorrowService {
   BASE_URL: string = environment.baseUrl;
 
   listAll() {
-    return this.httpClient.get<Borrow[]>(this.API)
+    return this.httpClient.get<Borrow[]>(`${this.BASE_URL}` + this.API)
     .pipe(
       first(),
       // delay(5000),
